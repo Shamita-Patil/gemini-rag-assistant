@@ -1,6 +1,6 @@
 # Gemini RAG Assistant
 
-A Retrieval-Augmented Generation (RAG) application that enables users to ask questions about PDF documents using Google's Gemini model. The system retrieves relevant information from the uploaded document using semantic search and generates grounded answers with source references.
+A Retrieval-Augmented Generation (RAG) application that enables users to ask questions about PDF documents using Google's Gemini model. The system retrieves relevant information from uploaded documents using semantic search and generates grounded answers with source references.
 
 ## What This Project Does
 
@@ -8,7 +8,7 @@ A Retrieval-Augmented Generation (RAG) application that enables users to ask que
 * Splits content into searchable chunks
 * Generates semantic embeddings using Sentence Transformers
 * Stores embeddings in ChromaDB
-* Retrieves the most relevant document sections for a user query
+* Retrieves relevant document sections based on user queries
 * Uses Google Gemini to generate context-aware answers
 * Provides source references for transparency
 * Reduces hallucinations by answering only from document content
@@ -65,7 +65,22 @@ Answer + Source References
 * Hallucination Prevention
 * Local Vector Database
 * Google Gemini Integration
-* Easy-to-Use Command Line Interface
+* Command Line Interface
+
+---
+
+## Project Structure
+
+```text
+gemini-rag-assistant/
+│
+├── rag_gemini.py
+├── config.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── .env.example
+```
 
 ---
 
@@ -95,7 +110,7 @@ Create a `.env` file:
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
 
-Update the PDF path in the code:
+Update the PDF path in `rag_gemini.py`:
 
 ```python
 PDF_PATH = r"ADD_YOUR_PDF_FILE_PATH_HERE"
@@ -111,13 +126,41 @@ PDF_PATH = r"C:\Users\John\Documents\sample.pdf"
 
 ## How to Run
 
+### 1. Activate Virtual Environment
+
+Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+You should see:
+
+```text
+(.venv)
+```
+
+at the beginning of your terminal prompt.
+
+### 2. Run the Application
+
 ```bash
 python rag_gemini.py
 ```
 
-Example:
+Example startup:
 
 ```text
+Loading PDF...
+
+Creating document chunks...
+
+Generating embeddings...
+
+Creating vector database...
+
+RAG System Ready!
+
 Ask Question (type exit):
 ```
 
@@ -188,7 +231,7 @@ Sources:
 
 ## Author
 
-Built to learn and demonstrate:
+Built as a hands-on project to demonstrate:
 
 * Retrieval-Augmented Generation (RAG)
 * Semantic Search
