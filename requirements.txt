@@ -1,0 +1,6 @@
+google-generativeai
+sentence-transformers
+chromadb
+pypdf2
+numpy
+python-dotenv
